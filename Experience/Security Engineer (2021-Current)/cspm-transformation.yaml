@@ -1,0 +1,241 @@
+# =============================================================================
+# EXPERIENCE BLOCK — CSPM Transformation & Shared-Responsibility Operating Model
+# Companion data file for Experience_Letter_CSPM_Transformation.docx
+# =============================================================================
+
+meta:
+  project_name: "CSPM Transformation & Shared-Responsibility Operating Model"
+  organization: "Fortune 500 Enterprise (anonymized)"
+  role: "Cloud Security Architect"
+  engagement_type: "architecture_advisory"
+  duration:
+    start: "2025-10"
+    end: "2026-01"
+    length_description: "~4 months"
+  team:
+    size: "Cross-functional working group spanning Security Architecture, DevSecOps, Platform Engineering, Enterprise Risk / GRC, and Application Security"
+    your_role_in_team: "Lead Architect — single technical owner of the target-state operating model"
+    direct_reports: 0
+
+context:
+  business_problem: >
+    CSPM across the enterprise was reactive and fragmented. Misconfigurations were
+    surfaced post-deployment, driving extended risk windows, duplicated alerts across
+    scanners, growing engineering tech debt, and limited visibility into overall
+    cloud security posture. Security, risk, DevSecOps, and application teams
+    operated in silos with no shared accountability model and no consistent way to
+    measure control effectiveness, residual risk, or remediation performance.
+  why_it_mattered: >
+    Without a unified operating model, the organization would continue to absorb a
+    growing backlog of misconfigurations, inconsistent control coverage against
+    enterprise risk frameworks, and a fragmented response posture — undermining any
+    follow-on CNAPP or cloud-native security investment.
+  scope: "Enterprise-wide, across build, deploy, and runtime stages of the cloud lifecycle"
+  audience: "CISO / Deputy CISO, Head of Security Architecture, VP / Head of DevSecOps & Platform Engineering, Head of Enterprise Risk / GRC, application engineering leadership"
+  industry_domain: "Enterprise Cloud Security, CSPM, CNAPP, DevSecOps"
+
+approach:
+  nature_of_work: "redesign / transformation architecture"
+  methodology: >
+    Operating-model-led rather than tool-led. Designed target-state workflows,
+    ownership, and measurement first; mapped tooling to the model afterward.
+    Iterated design through executive socialization with CISO, Security Architecture,
+    DevSecOps, and Enterprise Risk leadership.
+  frameworks_referenced:
+    - "NIST Cybersecurity Framework (CSF)"
+    - "NIST SP 800-53"
+    - "CIS Benchmarks / CIS Controls"
+  design_patterns:
+    - name: "SDLC-Integrated CSPM Workflow"
+      description: "PR-time misconfiguration detection, post-merge routing into sprint planning, consolidated runtime monitoring"
+      risks_addressed: ["Post-deployment misconfigurations", "Alert duplication", "Remediation latency"]
+      deployment_scenarios: ["Multi-cloud", "Containerized workloads", "IaC-managed infrastructure"]
+    - name: "Shared-Responsibility RACI Model"
+      description: "Clear ownership delineation across Security Architecture, Risk/GRC, DevSecOps, Platform Eng, and Application teams"
+      risks_addressed: ["Ownership gaps between detect and fix", "Cross-team friction", "Unclear accountability"]
+      deployment_scenarios: ["Enterprise-scale operating model", "Multi-BU cloud estates"]
+    - name: "Risk-Framework-Mapped Control Baseline"
+      description: "Central control catalog mapped to NIST CSF, NIST 800-53, and CIS Benchmarks for automated effectiveness & residual-risk measurement"
+      risks_addressed: ["Unmeasurable control effectiveness", "No residual-risk signal", "Governance gaps"]
+      deployment_scenarios: ["Risk-tiered workloads", "Regulated business units"]
+  key_decisions:
+    - "Reject tool-led design; anchor the program on operating model and ownership first"
+    - "Shift misconfiguration detection left into PR reviews rather than post-deploy scans"
+    - "Route remediation into engineering sprint planning with SLA-aligned priorities"
+    - "Map control baselines to enterprise risk frameworks to convert posture into a risk signal"
+    - "Use RACI to dissolve the historical gray zone between 'who detects' and 'who fixes'"
+  innovations:
+    - "Shared-responsibility operating framework as the anchor artifact (vs. a tool deployment)"
+    - "Sprint-integrated remediation pattern as default engineering workflow"
+    - "Automated control-effectiveness and residual-risk measurement tied to NIST/CIS"
+    - "Single operating framework aligning historically siloed security, risk, and engineering teams"
+
+deliverables:
+  primary:
+    - name: "CSPM Transformation Architecture"
+      description: "Target-state operating model covering build, deploy, and runtime"
+      consumers: ["CISO office", "Security Architecture", "DevSecOps & Platform Engineering", "Enterprise Risk / GRC"]
+      shelf_life: "Multi-year living architecture"
+    - name: "Shared-Responsibility RACI & Operating Framework"
+      description: "Ownership matrix governing day-to-day CSPM execution"
+      consumers: ["Security", "Risk / GRC", "DevSecOps", "Platform Eng", "Application teams"]
+      shelf_life: "Living document"
+    - name: "Centralized Control Baseline Catalog"
+      description: "Control set mapped to NIST CSF, NIST 800-53, CIS Benchmarks; enables automated effectiveness & residual-risk measurement"
+      consumers: ["Security Architecture", "Enterprise Risk / GRC"]
+      shelf_life: "Quarterly-refresh living catalog"
+    - name: "SDLC-Integrated CSPM Workflow Design"
+      description: "PR-time checks, post-merge sprint routing, consolidated runtime monitoring"
+      consumers: ["DevSecOps", "Platform Engineering", "Application Security"]
+      shelf_life: "Living pattern"
+    - name: "Execution Roadmap & KPI / KRI Pack"
+      description: "Adoption waves, metric definitions, and leadership dashboards"
+      consumers: ["CISO office", "Engineering leadership"]
+      shelf_life: "Program lifecycle"
+  secondary:
+    - "Executive briefing decks and narrative artifacts for CISO / Security Architecture / DevSecOps / Risk forums"
+    - "Tool-to-model mapping (Defender for Cloud, Aqua, Snyk, GitHub Advanced Security)"
+
+technologies:
+  direct:
+    - "Microsoft Defender for Cloud"
+    - "Aqua"
+    - "Snyk"
+    - "GitHub Advanced Security"
+  ecosystem:
+    - "Multi-cloud environments"
+    - "Containerized workloads"
+    - "Infrastructure-as-Code pipelines"
+    - "CI/CD (GitHub Actions and related)"
+  evaluated:
+    - "CNAPP direction-of-travel (model designed to extend into CNAPP without re-architecture)"
+  categories:
+    - "Cloud Security Posture Management (CSPM)"
+    - "Cloud-Native Application Protection (CNAPP)"
+    - "Shift-Left / DevSecOps"
+    - "IaC Security"
+    - "Container & Workload Security"
+    - "Application Security / SAST / SCA"
+    - "Control Effectiveness & Residual Risk Measurement"
+    - "Cloud Governance"
+
+stakeholders:
+  presented_to:
+    - "CISO / Deputy CISO"
+    - "Head of Security Architecture"
+    - "VP / Head of DevSecOps & Platform Engineering"
+    - "Head of Enterprise Risk / GRC"
+  collaborated_with:
+    - "Security Architects"
+    - "DevSecOps Engineers"
+    - "Platform Engineering Leads"
+    - "Application Security Partners"
+    - "Risk / GRC Analysts"
+  influenced:
+    - "Application engineering teams (remediation repositioned into sprint planning)"
+    - "Enterprise Risk / GRC (governed against a mapped control baseline)"
+    - "DevSecOps (consolidated alert workflow)"
+
+leadership:
+  activities:
+    - "Architected and led design of the enterprise CSPM operating model end-to-end"
+    - "Chaired cross-functional working sessions to pressure-test RACI and SDLC integration"
+    - "Briefed CISO / Deputy CISO and Head of Security Architecture; secured visible executive support"
+    - "Partnered with Enterprise Risk / GRC to align control baseline to NIST CSF, NIST 800-53, CIS"
+    - "Produced execution-ready roadmap, KPIs / KRIs, RACI, and adoption waves"
+  cross_functional: >
+    Drove alignment across four historically siloed leadership stakeholders
+    (security, risk, DevSecOps, engineering) under a single operating framework —
+    a prerequisite for any future CNAPP investment.
+  mentoring: "Informal knowledge transfer to security architects and DevSecOps leads on operating-model-led program design"
+  strategic_influence: >
+    Reframed the CSPM program from a tool conversation into an operating-model
+    conversation; established the durable foundation the organization intends to
+    extend into broader cloud-native / CNAPP initiatives.
+
+impact:
+  quantitative:
+    - metric: "Cloud attack-surface exposure"
+      value: "~30–40% projected reduction"
+      context: "Directional estimate driven by shifting detection and remediation into PR reviews and sprint planning vs. post-deployment"
+    - metric: "Alert duplication"
+      value: "Materially reduced"
+      context: "Consolidated duplicate alerting across CSPM, container, SAST/SCA, and IaC scanners into a single accountable workflow"
+    - metric: "Control baseline coverage"
+      value: "Enterprise-wide catalog mapped to NIST CSF, NIST 800-53, and CIS Benchmarks"
+      context: "Enabled automated measurement of control effectiveness and residual risk for the first time"
+  qualitative:
+    - "Visible, collective support from senior security and engineering leadership around a single operating framework"
+    - "Broke silos between security, enterprise risk / GRC, and engineering via defined RACI roles and shared control baseline"
+    - "Moved CSPM from reactive, ticket-driven posture into proactive, risk-driven, SDLC-integrated discipline"
+    - "Established a durable foundation for CNAPP and cloud-native security expansion"
+  adoption: "Adopted as the anchor architecture for the enterprise CSPM program and the design basis for follow-on CNAPP investment"
+  longevity: "Designed as multi-year living artifacts governing CSPM operations and extensible to CNAPP, runtime protection, and cloud-native security"
+
+keywords:
+  technical:
+    - "CSPM"
+    - "CNAPP"
+    - "Microsoft Defender for Cloud"
+    - "Aqua"
+    - "Snyk"
+    - "GitHub Advanced Security"
+    - "SAST"
+    - "SCA"
+    - "IaC Security"
+    - "Container Security"
+    - "Workload Security"
+    - "Runtime Monitoring"
+    - "NIST CSF"
+    - "NIST SP 800-53"
+    - "CIS Benchmarks"
+    - "CIS Controls"
+    - "Multi-Cloud Security"
+    - "PR-time Security Checks"
+  domain:
+    - "Cloud Security Posture Management"
+    - "Cloud-Native Application Protection"
+    - "DevSecOps"
+    - "SDLC Security"
+    - "Shift-Left Security"
+    - "Application Security"
+    - "Enterprise Risk / GRC"
+    - "Control Effectiveness"
+    - "Residual Risk"
+    - "Cloud Governance"
+    - "Attack Surface Reduction"
+  methodologies:
+    - "Operating-Model-Led Program Design"
+    - "Shared-Responsibility Model"
+    - "RACI Design"
+    - "Risk-Framework-Mapped Control Baselining"
+    - "Sprint-Integrated Remediation"
+    - "Executive Socialization"
+    - "Adoption-Wave Roadmapping"
+    - "KPI / KRI Definition"
+  soft_skills:
+    - "Executive Stakeholder Management"
+    - "CISO-Level Communication"
+    - "Cross-Functional Leadership"
+    - "Consensus Building"
+    - "Strategic Influence"
+    - "Architecture Thought Leadership"
+
+proudest_achievement:
+  headline: >
+    Architected an enterprise CSPM operating model that replaced a reactive,
+    siloed posture with a proactive, risk-driven, shared-responsibility framework —
+    and won visible, collective executive sponsorship across security, risk, and
+    engineering leadership.
+  story: >
+    In a ~4-month architecture engagement, I turned CSPM from a tool conversation
+    into an operating-model conversation. By leading with shared responsibility,
+    SDLC integration, and risk-framework-mapped control baselines — rather than
+    tool selection — I aligned historically siloed teams under a single framework,
+    secured CISO-level and engineering-leadership sponsorship, and produced a
+    design that is execution-ready and extensible to CNAPP.
+  why_it_matters: >
+    Demonstrates the ability to architect enterprise-scale cloud security programs,
+    navigate multi-stakeholder leadership environments, translate security design
+    into engineering reality, and create durable governance foundations rather
+    than point fixes.

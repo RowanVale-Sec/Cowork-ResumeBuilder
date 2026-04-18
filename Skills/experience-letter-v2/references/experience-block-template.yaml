@@ -1,0 +1,175 @@
+# =============================================================================
+# EXPERIENCE BLOCK TEMPLATE  (v2 — with provenance anchors)
+# =============================================================================
+# Copy this file, rename to {engagement-id}.yaml, and fill in your details.
+# Place completed files where your timeline entry's `yaml_path` points.
+#
+# Guidelines:
+# - Be specific and quantify wherever possible
+# - Use action verbs (Led, Designed, Built, Defined, Established)
+# - Include keywords that ATS systems scan for
+# - Capture the "so what" — why did this matter?
+#
+# -----------------------------------------------------------------------------
+# PROVENANCE ANCHORS  (IMPORTANT — read this once, then follow the pattern)
+# -----------------------------------------------------------------------------
+# Every bullet-worthy claim below carries a stable `id:` (a "provenance
+# anchor"). Resume bullets bind to these anchor ids, not to the free-text
+# content next to them. Why: if someone later rewrites a bullet's wording, the
+# resume doesn't silently break — it still resolves the same anchor.
+#
+# Anchor naming convention — dotted path, all lowercase, hyphenated:
+#     <engagement-id>.<section>.<field-or-slug>
+# Examples:
+#     cspm-transformation.impact.attack-surface
+#     cspm-transformation.approach.key-decisions.multi-cloud-normalization
+#     cspm-transformation.leadership.activities.published-rfc
+#
+# Rules:
+#   1. The engagement-id prefix MUST match the `id:` used in career_timeline.json
+#      for this engagement (e.g., "cspm-transformation"). This is what ties the
+#      yaml back to the timeline.
+#   2. Anchors are immutable once published — if you want to refactor, deprecate
+#      (don't delete) by adding `deprecated: true` and a `superseded_by:` field.
+#   3. Every list item that a resume might cite gets its own id. If a field is
+#      a single value that might be cited on its own (e.g., a headline stat),
+#      give it an id too.
+#   4. Keep ids short, descriptive, and stable against rewording. Prefer
+#      "attack-surface" over "reduced-attack-surface-by-60pct" — the number
+#      might change; the concept won't.
+# =============================================================================
+
+meta:
+  project_name: ""                    # Codename or project name (e.g., "Project Grid")
+  engagement_id: ""                   # MUST match career_timeline.json entry's id
+  organization: ""                    # Company or client (use codename if confidential)
+  role: ""                            # Your title/role on this project
+  role_title_at_the_time: ""          # Your formal title on the employer's side when this ran
+                                      #   (may differ from role_in_engagement — e.g., IC-engineer
+                                      #   formally titled "Engineering Manager")
+  engagement_type: ""                 # full-time | contract | consulting | advisory
+  duration:
+    start: ""                         # YYYY-MM format — REQUIRED
+    end: ""                           # YYYY-MM format or "present" — REQUIRED
+    length_description: ""            # e.g., "6 months", "< 6 months"
+  team:
+    size: ""                          # e.g., "4-8 people" — REQUIRED
+    your_role_in_team: ""             # e.g., "Engineering Lead", "IC contributor"
+    direct_reports: 0                 # Number of people reporting to you
+
+context:
+  business_problem: ""                # What challenge did the org face?
+  why_it_mattered: ""                 # Business impact of not solving it
+  scope: ""                           # Single team? Enterprise-wide? Multi-org?
+  audience: ""                        # Who was this built for?
+  industry_domain: ""                 # e.g., "Enterprise AI Security", "FinTech", "Healthcare"
+
+approach:
+  nature_of_work: ""                  # greenfield | redesign | assessment | migration | optimization
+  methodology: ""                     # How you structured the work
+  frameworks_referenced: []           # Each item: { id: "<eng-id>.approach.frameworks.<slug>", name: "OWASP Top 10 LLM" }
+                                      # Example:
+                                      # - id: cspm-transformation.approach.frameworks.cis-benchmarks
+                                      #   name: "CIS Benchmarks v1.5"
+  design_patterns: []                 # Each item is an anchored pattern object:
+                                      # - id: cspm-transformation.approach.patterns.multi-cloud-normalizer
+                                      #   name: "Multi-Cloud Finding Normalizer"
+                                      #   description: ""
+                                      #   risks_addressed: []
+                                      #   deployment_scenarios: []
+  key_decisions: []                   # Each item:
+                                      # - id: cspm-transformation.approach.decisions.<slug>
+                                      #   decision: ""
+                                      #   why: ""
+                                      #   tradeoffs: ""
+  innovations: []                     # Each item:
+                                      # - id: cspm-transformation.approach.innovations.<slug>
+                                      #   description: ""
+
+deliverables:
+  primary: []                         # Each item:
+                                      # - id: cspm-transformation.deliverables.primary.<slug>
+                                      #   name: ""
+                                      #   description: ""
+                                      #   consumers: []
+                                      #   shelf_life: ""           # one-time | living | quarterly
+  secondary: []                       # Same shape as primary
+
+technologies:
+  direct: []                          # Each item: { id: "<eng-id>.tech.direct.<slug>", name: "Wiz" }
+                                      # Tech you directly worked with hands-on — REQUIRED if applicable
+  ecosystem: []                       # Same shape — tech in the broader project environment (REQUIRED)
+  evaluated: []                       # Same shape — vendor tools or platforms you formally assessed (REQUIRED)
+  categories: []                      # Plain strings — e.g., ["IAM", "Data Security", "TDR", "SPM"]
+
+stakeholders:
+  presented_to: []                    # Each item: { id, level, audience }
+                                      # level is one of: IC | Manager | Director | VP | C-suite | Board
+                                      # Example:
+                                      # - id: cspm-transformation.stakeholders.presented_to.cio-readout
+                                      #   level: "C-suite"
+                                      #   audience: "CIO + Risk Committee"
+  collaborated_with: []               # Each item: { id, role, team }
+  influenced: []                      # Each item: { id, description } — teams/orgs whose work changed
+
+leadership:
+  activities: []                      # Each item:
+                                      # - id: cspm-transformation.leadership.activities.<slug>
+                                      #   description: "Published internal RFC on shared-responsibility model"
+                                      #   artifact_link: ""        # optional path or URL
+  cross_functional: ""                # Prose description of cross-team coordination
+  mentoring: ""                       # Any coaching or knowledge transfer
+  strategic_influence: ""             # How you shaped direction beyond your immediate scope
+
+impact:
+  quantitative: []                    # Each item — REQUIRED to have at least one if numbers exist:
+                                      # - id: cspm-transformation.impact.quantitative.attack-surface
+                                      #   metric: "attack surface reduction"
+                                      #   value: "~60%"
+                                      #   context: "across 14 business units in first 6 months"
+                                      #   confidence: "estimate"   # measured | estimate | self-reported
+  qualitative: []                     # Each item — REQUIRED to have at least one:
+                                      # - id: cspm-transformation.impact.qualitative.<slug>
+                                      #   description: "Became referenced pattern across the firm's cloud org"
+  adoption: ""                        # How widely was your work adopted?
+  longevity: ""                       # How long will this work remain relevant?
+
+keywords:
+  # Flat list of terms for ATS matching — no anchors needed; these are for
+  # grep-style retrieval, not resume-bullet binding.
+  technical: []                       # Hard skills, tools, frameworks
+  domain: []                          # Industry/domain terms
+  methodologies: []                   # Process and approach terms
+  soft_skills: []                     # Leadership, communication, etc.
+
+proudest_achievement:
+  id: ""                              # e.g., cspm-transformation.proudest.headline
+  headline: ""                        # One-sentence summary of your top accomplishment
+  story: ""                           # 2-3 sentence narrative expanding on it
+  why_it_matters: ""                  # Why this demonstrates your value
+
+# -----------------------------------------------------------------------------
+# Completeness self-check (filled by capture skill; DO NOT hand-edit)
+# -----------------------------------------------------------------------------
+# The experience-letter skill fills this in at save time based on the
+# capture-completeness checklist. If `status: complete`, every required field
+# was confirmed by the user. If `status: incomplete`, see `missing` for the
+# list — resume builders should treat these as low-confidence.
+_capture:
+  status: ""                          # complete | incomplete
+  missing: []                         # List of dotted-path fields the user chose to skip
+  captured_at: ""                     # YYYY-MM-DD when this letter was captured
+  captured_by: ""                     # "experience-letter skill vN"
+
+# =============================================================================
+# NOTES FOR CLAUDE (when generating resume bullets from this block):
+# - Resume bullets MUST cite an anchor id — never free-text paraphrase alone.
+#   Anchor citation format in the resume source:
+#     { bullet: "...", anchor: "cspm-transformation.impact.attack-surface" }
+# - If an anchor can't be resolved (deleted or renamed without deprecation),
+#   the resume build should fail loud, not silently drop the bullet.
+# - Prioritize bullets based on JD relevance, not chronological order.
+# - Mirror JD language when describing equivalent skills.
+# - Calibrate seniority framing to match target role level.
+# - Flag any areas where this experience only partially covers a JD requirement.
+# =============================================================================

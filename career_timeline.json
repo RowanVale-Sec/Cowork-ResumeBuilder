@@ -1,0 +1,648 @@
+{
+  "_meta": {
+    "description": "Canonical career timeline. Source of truth for resume builders, experience-letter authors, and validators. Each engagement's 'letter_path' points to its authoritative experience letter; bullets on a resume must trace to an entry here.",
+    "version": "0.3 — embedded per-engagement skills (tools/concepts/categories) into timeline",
+    "last_updated": "2026-04-17",
+    "maintainer_rules": [
+      "Never modify dates without a source citation (experience letter OR user confirmation).",
+      "When creating a new experience letter, add/update the matching entry here in the same operation.",
+      "When building a resume, read this file first and ask the user which engagements to feature."
+    ]
+  },
+  "candidate": {
+    "name": "Alex J. Morgan",
+    "email": "candidate@example.com",
+    "phone": "+1 XXX XXX XXXX",
+    "linkedin": "linkedin.com/in/candidate-profile/",
+    "github": "github.com/CandidateSec",
+    "location": "United States"
+  },
+  "tenures": [
+    {
+      "id": "firm-a-engineering-manager",
+      "employer": "Global Advisory Firm A",
+      "role_title": "Engineering Manager, Cloud & Security",
+      "start": "2022-01",
+      "end": "present",
+      "source": "user-confirmed",
+      "engagements": [
+        {
+          "id": "cspm-transformation",
+          "name": "CSPM Transformation & Shared-Responsibility Operating Model",
+          "role_in_engagement": "Cloud Security Architect",
+          "start": "2025-10",
+          "end": "2026-01",
+          "letter_path": "Experience/Security Engineer/Experience_Letter_CSPM_Transformation.docx",
+          "yaml_path": "Experience/Security Engineer/cspm-transformation.yaml",
+          "engagement_type": "architecture_advisory",
+          "skills": {
+            "tools": [
+              "Aqua Security",
+              "Cloud Governance",
+              "GitHub Advanced Security",
+              "Microsoft Defender for Cloud",
+              "Multi-Cloud Environments",
+              "Residual Risk",
+              "Runtime Monitoring",
+              "Snyk"
+            ],
+            "concepts": [
+              "Adoption-Wave Roadmapping",
+              "Attack Surface Reduction",
+              "CIS Benchmarks",
+              "CIS Controls",
+              "Enterprise Risk / GRC",
+              "Executive Socialization",
+              "Infrastructure-as-Code (IaC) Pipelines",
+              "KPI / KRI Definition",
+              "NIST Cybersecurity Framework (CSF)",
+              "NIST SP 800-53",
+              "Operating-Model-Led Program Design",
+              "RACI Design",
+              "Risk-Framework-Mapped Control Baselining",
+              "SCA (Software Composition Analysis)",
+              "SDLC-Integrated CSPM Workflow",
+              "Shared-Responsibility Model",
+              "Shift-Left Security",
+              "Sprint-Integrated Remediation"
+            ],
+            "categories": [
+              "Application Security (AppSec)",
+              "Aqua Security",
+              "CNAPP (Cloud-Native Application Protection Platform)",
+              "CSPM (Cloud Security Posture Management)",
+              "Cloud Governance",
+              "Container Security",
+              "Control Effectiveness & Residual Risk Measurement",
+              "DevSecOps",
+              "GitHub Advanced Security",
+              "Infrastructure-as-Code (IaC) Security",
+              "Multi-Cloud Security",
+              "PR-Time Security Checks",
+              "SAST (Static Application Security Testing)",
+              "SDLC Security",
+              "Shift-Left Security",
+              "Workload Security"
+            ]
+          }
+        },
+        {
+          "id": "AI-Capability-Framework",
+          "name": "Enterprise AI Security Framework",
+          "role_in_engagement": "Engineering Lead",
+          "start": "2025-10",
+          "end": "2026-03",
+          "letter_path": "Experience/Security Engineer/Experience_Letter_AIFramework.docx",
+          "yaml_path": "Experience/Security Engineer/ai-framework.yaml",
+          "engagement_type": "consulting",
+          "skills": {
+            "tools": [
+              "AI Security Vendor Tools",
+              "Agent Frameworks",
+              "Agent Observability & Governance",
+              "Anthropic",
+              "HuggingFace",
+              "LLM APIs",
+              "OpenAI",
+              "RAG Pipelines",
+              "Self-Hosted LLMs",
+              "vLLM"
+            ],
+            "concepts": [
+              "AI Access Control",
+              "AI Authentication",
+              "AI Guardrails",
+              "AI Output Monitoring",
+              "AI Tool Governance",
+              "Adversarial Threat Defense",
+              "Agentic AI Workflows",
+              "Custom LLM (LLM + RAG)",
+              "Data Leakage Prevention (DLP)",
+              "I/O Validation for AI",
+              "ISO 42001 (AI Management)",
+              "Jailbreak Prevention",
+              "MCP Security",
+              "MCP Server Hosting Platforms",
+              "MITRE ATLAS",
+              "MLOps / Model Deployment",
+              "Model Context Protocol (MCP)",
+              "Model Supply Chain Security",
+              "Multi-Agent",
+              "NIST AI RMF",
+              "OWASP Agentic AI Security",
+              "OWASP Top 10 for LLMs",
+              "Prompt Injection Defense",
+              "RAG Pipeline Security",
+              "Single Agent",
+              "Traditional / General Purpose (Enterprise Copilot)"
+            ],
+            "categories": [
+              "Agentic AI Security",
+              "Audit",
+              "Compliance",
+              "Data Security",
+              "Identity & Access Management (IAM)",
+              "LLM Security",
+              "Multi-Agent Security",
+              "Security Framework Design",
+              "Security Posture Management (SPM)",
+              "Threat Detection & Response (TDR)"
+            ]
+          }
+        },
+        {
+          "id": "container-security",
+          "name": "Container Security Transformation",
+          "role_in_engagement": "Lead Architect",
+          "start": "2024-01",
+          "end": "2025-03",
+          "letter_path": "Experience/Security Engineer/Experience_Letter_ContainerSecurity.docx",
+          "yaml_path": "Experience/Security Engineer/container-security.yaml",
+          "engagement_type": "consulting",
+          "skills": {
+            "tools": [
+              "Admission Controllers",
+              "Amazon EKS",
+              "CI/CD Platforms",
+              "CNAPP (Cloud-Native Application Protection Platform)",
+              "Container Scanning (Trivy / Grype)",
+              "Grype",
+              "Policy-as-Code",
+              "Policy-as-Code Frameworks",
+              "Terraform",
+              "Trivy"
+            ],
+            "concepts": [
+              "3-Pillar Container Security Architecture",
+              "Admission Control",
+              "Admission Control Policy Managers",
+              "CIS Docker Benchmark",
+              "Container Hardening",
+              "Container Registries (ECR / Private)",
+              "Image Hardening",
+              "Image Hardening Tools",
+              "Kubernetes Network Policies",
+              "Kubernetes Security Hardening Standards",
+              "NIST Container Security Guidelines",
+              "Policy-as-Code",
+              "RBAC (Role-Based Access Control)",
+              "SBOM (Software Bill of Materials)",
+              "SBOM Tooling",
+              "Shift-Left CI/CD Security Gates",
+              "Shift-Left Security",
+              "Software Supply Chain Security",
+              "Vulnerability Scanning"
+            ],
+            "categories": [
+              "CNAPP (Cloud-Native Application Protection Platform)",
+              "Compliance",
+              "Container Registry Security",
+              "Container Security",
+              "EOL/EOS Management",
+              "Kubernetes",
+              "Policy Enforcement",
+              "Software Supply Chain Security",
+              "Vulnerability Management"
+            ]
+          }
+        },
+        {
+          "id": "ai-assessment-tool",
+          "name": "AI-Assisted Cloud Security Assessment Tool",
+          "role_in_engagement": "Engineering Manager",
+          "start": "2023-09",
+          "end": "2025-03",
+          "letter_path": "Experience/Security Engineer/Experience_Letter_AIAssessmentTool.docx",
+          "yaml_path": "Experience/Security Engineer/ai-assessment-tool.yaml",
+          "engagement_type": "full-time",
+          "skills": {
+            "tools": [
+              "Cloud Security Assessment Tooling",
+              "Knowledge Management Systems",
+              "LLM Providers & Models",
+              "LLMs (Large Language Models)",
+              "RAG-Based Assessment Insight Generation",
+              "Vector Databases"
+            ],
+            "concepts": [
+              "AI model evaluation",
+              "Misconfiguration Detection",
+              "Parallel AI vs Manual Validation",
+              "Prompt Engineering",
+              "RAG (Retrieval-Augmented Generation)",
+              "Reporting / Documentation Platforms"
+            ],
+            "categories": [
+              "AI/ML Engineering",
+              "Assessment Automation"
+            ]
+          }
+        },
+        {
+          "id": "product-security",
+          "name": "Product Security Program & Open-Source Tool Development",
+          "role_in_engagement": "Engineering Manager",
+          "start": "2023-06",
+          "end": "2024-12",
+          "letter_path": "Experience/Security Engineer/Experience_Letter_ProductSecurity.docx",
+          "yaml_path": "Experience/Security Engineer/product-security.yaml",
+          "engagement_type": "full-time",
+          "skills": {
+            "tools": [
+              "Open-Source Security Tooling",
+              "Policy-as-Code",
+              "Security-as-a-Platform tools"
+            ],
+            "concepts": [
+              "OWASP Product Security",
+              "Open-Source Security Integration Tool",
+              "Policy Enforcement Tools",
+              "Product Security Operating Model",
+              "Security-as-a-Platform patterns",
+              "Startup product security best practices",
+              "Startup product security models"
+            ],
+            "categories": [
+              "Application Security (AppSec)",
+              "Governance",
+              "Open-Source Security Tooling",
+              "Platform Engineering",
+              "Product Security",
+              "Security Integration",
+              "Security-as-a-Platform"
+            ]
+          }
+        },
+        {
+          "id": "cloud-coe",
+          "name": "Cloud COE Security Assessment",
+          "role_in_engagement": "Engineering Manager",
+          "start": "2023-01",
+          "end": "2023-12",
+          "letter_path": "Experience/Security Engineer/Experience_Letter_CloudCOE.docx",
+          "yaml_path": "Experience/Security Engineer/cloud-coe.yaml",
+          "engagement_type": "full-time",
+          "skills": {
+            "tools": [
+              "CSPM (Cloud Security Posture Management)",
+              "Cloud Governance",
+              "Cloud Security Monitoring Tooling"
+            ],
+            "concepts": [
+              "Alert Prioritization",
+              "Data Classification",
+              "Data Classification Tooling",
+              "Data Classification-Driven Controls",
+              "Industry Cloud Security Standards",
+              "Risk-Based Control Prioritization"
+            ],
+            "categories": [
+              "CSPM (Cloud Security Posture Management)",
+              "Governance"
+            ]
+          }
+        },
+        {
+          "id": "config-mgmt",
+          "name": "Configuration Management Process Assessment",
+          "role_in_engagement": "Engineering Manager",
+          "start": "2023-03",
+          "end": "2023-09",
+          "letter_path": "Experience/Security Engineer/Experience_Letter_ConfigMgmt.docx",
+          "yaml_path": "Experience/Security Engineer/config-mgmt.yaml",
+          "engagement_type": "consulting",
+          "skills": {
+            "tools": [
+              "Audit & Compliance Tracking Tools",
+              "Change Management Systems",
+              "Configuration Management Tooling"
+            ],
+            "concepts": [
+              "Change Management",
+              "ISO/IEC 27001",
+              "ISO/IEC 27001 (Configuration Management)",
+              "NIST SP 800-128",
+              "NIST-Aligned Configuration Management Process",
+              "Regulatory Audit Requirements",
+              "Version Control Systems"
+            ],
+            "categories": [
+              "Audit",
+              "Compliance",
+              "Configuration Management",
+              "Process Management"
+            ]
+          }
+        },
+        {
+          "id": "saas-assessment",
+          "name": "SaaS Product Security Assessment",
+          "role_in_engagement": "Engagement Lead",
+          "start": "2023-06",
+          "end": "2023-08",
+          "letter_path": "Experience/Security Engineer/Experience_Letter_SaaSAssessment.docx",
+          "yaml_path": "Experience/Security Engineer/saas-assessment.yaml",
+          "engagement_type": "consulting",
+          "skills": {
+            "tools": [
+              "AWS Security Services (IAM / KMS / Secrets Manager)",
+              "Amazon EKS",
+              "Amazon VPC"
+            ],
+            "concepts": [
+              "3-Workstream Assessment Framework",
+              "AWS Security Best Practices",
+              "CVSS",
+              "Network ACLs (NACLs)",
+              "OWASP Top 10",
+              "PASTA Threat Modeling",
+              "Vulnerability Assessment"
+            ],
+            "categories": [
+              "Application Security (AppSec)",
+              "Infrastructure Security",
+              "Kubernetes"
+            ]
+          }
+        },
+        {
+          "id": "cspm-financial",
+          "name": "Cloud Security Posture Management Program (Financial Services)",
+          "role_in_engagement": "Engineering Manager",
+          "start": "2022-03",
+          "end": "2024-02",
+          "letter_path": "Experience/Security Engineer/Experience_Letter_CSPM.docx",
+          "yaml_path": "Experience/Security Engineer/cspm.yaml",
+          "engagement_type": "full-time",
+          "skills": {
+            "tools": [
+              "AWS Service Control Policies (SCP)",
+              "Azure Policy",
+              "CI/CD Platforms",
+              "CSPM Tools (Prisma Cloud / CloudSploit / Prowler)",
+              "IaC Scanning",
+              "Policy Automation Platforms",
+              "Policy-as-Code",
+              "SIEM",
+              "Terraform"
+            ],
+            "concepts": [
+              "3-Layer Control Architecture",
+              "AWS Well-Architected Framework (Security Pillar)",
+              "Agile Security Assessment Model",
+              "Azure Security Best Practices",
+              "CIS Benchmarks",
+              "Detective-Preventive-Remediation Architecture",
+              "Encryption at Rest/Transit",
+              "IAM Governance",
+              "IaC Scanning Tools",
+              "Misconfiguration Detection",
+              "Policy-as-Code"
+            ],
+            "categories": [
+              "AWS Security",
+              "Amazon RDS Security",
+              "Amazon S3 Security",
+              "Audit",
+              "Azure Security",
+              "CSPM (Cloud Security Posture Management)",
+              "Compliance",
+              "Governance",
+              "Infrastructure Security",
+              "Network Security"
+            ]
+          }
+        },
+        {
+          "id": "sod-controls",
+          "name": "Segregation of Duties (SOD) Controls Automation",
+          "role_in_engagement": "Engineering Manager",
+          "start": "2022-01",
+          "end": "2023-12",
+          "letter_path": "Experience/Security Engineer/Experience_Letter_SODControls.docx",
+          "yaml_path": "Experience/Security Engineer/sod-controls.yaml",
+          "engagement_type": "full-time",
+          "skills": {
+            "tools": [
+              "Identity & Access Management (IAM)",
+              "Policy-as-Code",
+              "Policy-as-Code Frameworks",
+              "SOD Automation Tooling"
+            ],
+            "concepts": [
+              "Access Control",
+              "Automated Testing",
+              "Automated Testing Frameworks",
+              "COBIT 5",
+              "Edge-Case Test Suite Design",
+              "Internal Audit SOD Standards",
+              "RBAC (Role-Based Access Control)",
+              "RBAC Systems",
+              "Role Provisioning",
+              "Role Provisioning Systems",
+              "SOX Compliance",
+              "Segregation of Duties (SOD)",
+              "Toxic Combination Matrix",
+              "Workflow / Approval Engines"
+            ],
+            "categories": [
+              "Audit",
+              "Compliance",
+              "Compliance Automation",
+              "Identity & Access Management (IAM)",
+              "Segregation of Duties (SOD) Automation"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "firm-a-senior-cloud-architect",
+      "employer": "Global Advisory Firm A",
+      "role_title": "Senior Cloud Security Architect",
+      "start": "2021-09",
+      "end": "2021-12",
+      "source": "user-confirmed",
+      "engagements": [
+        {
+          "id": "healthcare-stride",
+          "name": "Healthcare Product Security Architecture (STRIDE Threat Modeling)",
+          "role_in_engagement": "Senior Cloud Security Architect",
+          "start": null,
+          "end": null,
+          "letter_path": null,
+          "yaml_path": null,
+          "source": "original_resume",
+          "_gap": "No experience letter exists. Consider creating one."
+        },
+        {
+          "id": "shadow-it-logistics",
+          "name": "Shadow IT Governance Framework",
+          "role_in_engagement": "Senior Cloud Security Architect",
+          "start": null,
+          "end": null,
+          "letter_path": null,
+          "yaml_path": null,
+          "source": "original_resume",
+          "_gap": "No experience letter exists. Consider creating one."
+        }
+      ]
+    },
+    {
+      "id": "firm-a-soc-manager",
+      "employer": "Global Advisory Firm A",
+      "role_title": "Senior — SOC Manager",
+      "start": "2017-10",
+      "end": "2021-09",
+      "source": "original_resume",
+      "engagements": [
+        {
+          "id": "retail-soc-scaling",
+          "name": "Large Enterprise Retail SOC Scaling & DFIR Leadership",
+          "role_in_engagement": "SOC Manager",
+          "start": null,
+          "end": null,
+          "letter_path": null,
+          "yaml_path": null,
+          "source": "original_resume",
+          "_gap": "No structured experience letter exists."
+        }
+      ]
+    },
+    {
+      "id": "education-ms",
+      "employer": "State Research University",
+      "role_title": "M.S., Cyber Security",
+      "start": "2015-08",
+      "end": "2017-05",
+      "source": "original_resume",
+      "_type": "education",
+      "_gap": "Overlap/transition dates need user confirmation."
+    },
+    {
+      "id": "it-services",
+      "employer": "IT Services Companies A & B",
+      "role_title": "Senior Software Developer",
+      "start": "2010-10",
+      "end": "2015-07",
+      "source": "original_resume",
+      "engagements": [
+        {
+          "id": "banking-wire-transfer",
+          "name": "Large Financial Institution Wire Transfer & ACH Systems",
+          "role_in_engagement": "Senior Software Developer",
+          "start": null,
+          "end": null,
+          "letter_path": null,
+          "yaml_path": null,
+          "source": "original_resume",
+          "_gap": "No experience letter exists."
+        }
+      ]
+    }
+  ],
+  "open_source": [
+    {
+      "id": "multi-agent-scanner",
+      "name": "Multi-Agent AI Security Pipeline",
+      "repository": "github.com/CandidateSec/security-scanner-agent",
+      "role": "Creator & Lead Developer (solo)",
+      "start": "2025",
+      "end": "present",
+      "letter_path": "Experience/Security Engineer/Experience_Letter_OpenSource.docx",
+      "yaml_path": "Experience/Security Engineer/open-source.yaml",
+      "skills": {
+        "tools": [
+          "Amazon S3",
+          "Asset Inventory",
+          "Azure OpenAI",
+          "Bandit",
+          "Checkov",
+          "Claude API",
+          "Docker & Docker Compose",
+          "FastMCP",
+          "HTTP Services",
+          "Multi-Agent Systems",
+          "Python",
+          "Secrets Scanning",
+          "Semgrep",
+          "Streamable HTTP",
+          "Syft",
+          "Trivy"
+        ],
+        "concepts": [
+          "Architecture-Aware Threat Modeling",
+          "Attack Chain Analysis",
+          "Attack Path Analysis",
+          "Automated Threat Modeling",
+          "CVSS",
+          "CVSS (risk scoring pattern)",
+          "Cosine Similarity",
+          "Data Flow Analysis",
+          "Health-Gated Service Startup",
+          "LLM Embeddings",
+          "LLM-Native Deduplication",
+          "MCP-for-Security",
+          "MITRE ATT&CK",
+          "Message-Bus Architecture",
+          "Microsoft Agent SDK",
+          "Model Context Protocol (MCP)",
+          "Open-Source Architectural Evolution",
+          "Orchestrator + Specialist Agents",
+          "S3 as Inter-Agent Message Bus",
+          "SBOM (Software Bill of Materials)",
+          "SCA (Software Composition Analysis)",
+          "SPDX",
+          "STRIDE Threat Modeling",
+          "Semantic Deduplication",
+          "Software Supply Chain Security",
+          "Trust Boundary Analysis",
+          "Versioned Artifact Persistence"
+        ],
+        "categories": [
+          "Agentic AI",
+          "Agentic AI Security",
+          "Application Security (AppSec)",
+          "Container Security",
+          "DevSecOps",
+          "DevSecOps Platform Engineering",
+          "Infrastructure-as-Code (IaC) Security",
+          "LLM Engineering",
+          "Model Context Protocol (MCP)",
+          "Multi-Agent Security",
+          "SAST (Static Application Security Testing)",
+          "Software Supply Chain Security",
+          "Threat Modeling Automation"
+        ]
+      }
+    }
+  ],
+  "education": [
+    {
+      "institution": "State Research University",
+      "degree": "M.S., Cyber Security",
+      "year": "2017",
+      "source": "original_resume"
+    },
+    {
+      "institution": "Technical University",
+      "degree": "B.E., Mechanical Engineering",
+      "year": "2010",
+      "source": "original_resume"
+    },
+    {
+      "institution": "Business School",
+      "degree": "Entrepreneurship Acceleration Program",
+      "year": null,
+      "source": "original_resume"
+    }
+  ],
+  "certifications": [
+    "CISSP",
+    "GIAC GCIH",
+    "GIAC GMON",
+    "GIAC GCFE",
+    "GIAC GCDA",
+    "Microsoft Azure Security Engineer (AZ-500)"
+  ]
+}

@@ -1,0 +1,289 @@
+# =============================================================================
+# EXPERIENCE BLOCK — COMPASS: Multi-Agent Security Pipeline
+# Companion data file for Experience_Letter_COMPASS.docx
+# =============================================================================
+
+meta:
+  project_name: "COMPASS — Cloud Operations Management Platform for Application Security Systems"
+  organization: "Open-Source Personal Project"
+  role: "Creator & Lead Developer (solo)"
+  engagement_type: "open_source"
+  repository: "https://github.com/CandidateSec/security-scanner-agent"
+  duration:
+    start: "2025"
+    end: "present"
+    length_description: "Ongoing open-source project (2025 – Present)"
+  team:
+    size: "Solo"
+    your_role_in_team: "Sole architect, developer, and maintainer"
+    direct_reports: 0
+
+context:
+  business_problem: >
+    Enterprise security tooling is fragmented: SAST, SCA, IaC, container, and
+    secrets scanners generate overlapping noisy findings, and threat modeling
+    remains a mostly manual, point-in-time workshop artifact decoupled from
+    actual code and runtime posture. There is no widely-available open-source
+    pipeline that automates end-to-end, architecture-aware threat modeling.
+  why_it_mattered: >
+    Without architecture-aware automation, findings pile up without prioritization,
+    threat models go stale the moment they are written, and practitioners cannot
+    iterate on threat modeling as a software discipline. COMPASS shows a path
+    to treat threat modeling as code.
+  scope: "End-to-end: codebase ingestion → multi-tool scanning → deduplication → MITRE mapping → SBOM + architecture + data-flow → STRIDE + attack-chain + CVSS"
+  audience: "Application-security engineers, DevSecOps practitioners, AI-engineering / MCP community"
+  industry_domain: "Application Security, Threat Modeling, DevSecOps, Applied AI / Agentic Systems"
+
+approach:
+  nature_of_work: "greenfield open-source system design & implementation"
+  methodology: >
+    Designed as a deliberately balanced intersection of three disciplines:
+    applied multi-agent AI engineering, security architecture & threat modeling,
+    and DevSecOps platform engineering. Structured around three principles:
+    agents as first-class HTTP services; S3 as a durable inter-agent message bus;
+    MCP servers as shared knowledge and tool planes.
+  frameworks_referenced:
+    - "STRIDE"
+    - "MITRE ATT&CK"
+    - "CVSS (risk scoring pattern)"
+    - "Model Context Protocol (MCP)"
+    - "Microsoft Agent SDK (earlier design iteration)"
+  design_patterns:
+    - name: "Orchestrator + Specialist Agents"
+      description: "Orchestrator service sequences Scanner → Inventory → Threat Model; each agent has an HTTP /run endpoint and is independently runnable"
+      risks_addressed: ["Monolithic security pipelines", "Non-reproducible threat modeling", "Tight coupling between tools"]
+      deployment_scenarios: ["CI/CD pipelines", "Security research", "Automated threat modeling for any codebase"]
+    - name: "S3 as Inter-Agent Message Bus"
+      description: "Versioned JSON artifacts between agents (mitre-mapped-findings, inventory, threat-model, executive-reports) — durable, replayable, human-readable"
+      risks_addressed: ["Ephemeral pipeline state", "Non-reproducible outputs", "Debug opacity"]
+      deployment_scenarios: ["Multi-agent pipelines", "Audit-grade security automation"]
+    - name: "MCP-for-Security Tool Plane"
+      description: "FastMCP / Streamable HTTP servers expose MITRE ATT&CK and Syft (SBOM) as shared tool/knowledge planes across agents"
+      risks_addressed: ["Per-agent tool duplication", "Knowledge fragmentation"]
+      deployment_scenarios: ["Agentic security stacks", "Multi-agent knowledge sharing"]
+    - name: "LLM-Embedding Finding Deduplication"
+      description: "Azure OpenAI embeddings + cosine-similarity clustering collapse near-duplicate findings across tools that rule-based dedup cannot catch"
+      risks_addressed: ["Alert fatigue", "Cross-tool noise"]
+      deployment_scenarios: ["Any multi-scanner pipeline"]
+    - name: "Architecture-Aware Threat Modeling Pipeline"
+      description: "Four-stage reasoning: correlate → generate attack scenarios → STRIDE → CVSS-style score & prioritize"
+      risks_addressed: ["Finding-by-finding severity triage", "Architecture-disconnected threat models"]
+      deployment_scenarios: ["Continuous threat modeling", "Architecture review automation"]
+  key_decisions:
+    - "Evolve away from tightly-coupled Agent-SDK design toward loose-coupled HTTP + MCP + S3 to maximize observability, reproducibility, and independent debuggability"
+    - "Treat deduplication as an LLM-native problem (embeddings + cosine) rather than a rule-based problem"
+    - "Model MITRE ATT&CK and Syft as MCP servers rather than in-agent libraries, to prove the pattern and enable reuse"
+    - "Docker Compose with health-gated startup so downstream agents never receive partial state"
+    - "Publish the earlier design doc alongside the realized implementation to make architectural reasoning transparent"
+  innovations:
+    - "Architecture-aware, automated, multi-agent threat modeling as an open-source artifact"
+    - "Practical MCP-for-security pattern (ATT&CK + Syft as shared MCP planes)"
+    - "LLM-embedding deduplication across seven heterogeneous scanner outputs"
+    - "S3-as-message-bus pattern for agentic security pipelines"
+    - "Published architectural evolution (SDK-coupled → HTTP+MCP+S3) as a reusable design lesson"
+
+deliverables:
+  primary:
+    - name: "Orchestrator service (port 8093)"
+      description: "HTTP entry point; sequences Scanner → Inventory → Threat Model and produces executive summary artifact"
+      consumers: ["End users via POST /run", "CI/CD pipelines"]
+      shelf_life: "Living project core"
+    - name: "Scanner agent (port 8090)"
+      description: "Parallel execution of Checkov, Trivy (IaC/SCA/Secrets/Image), Bandit, Semgrep + aggregation + LLM-embedding dedup + MITRE mapping"
+      consumers: ["Orchestrator", "Threat Model agent (via S3)"]
+      shelf_life: "Living"
+    - name: "Inventory agent (port 8091)"
+      description: "Enhanced SBOM via Syft MCP, architecture analysis, data-flow mapping, asset inventory w/ risk classification"
+      consumers: ["Orchestrator", "Threat Model agent (via S3)"]
+      shelf_life: "Living"
+    - name: "Threat Model agent (port 8092)"
+      description: "Four-stage pipeline: correlate → generate attack scenarios → STRIDE → CVSS-style scoring"
+      consumers: ["Orchestrator", "End users via executive summary"]
+      shelf_life: "Living"
+    - name: "MITRE ATT&CK MCP server (port 8000)"
+      description: "FastMCP / Streamable HTTP server exposing ATT&CK knowledge base as a shared tool plane"
+      consumers: ["Scanner agent", "potential reuse by external agents"]
+      shelf_life: "Reusable MCP artifact"
+    - name: "Syft MCP server (port 8080)"
+      description: "MCP wrapper around Syft for SBOM generation"
+      consumers: ["Inventory agent", "potential reuse"]
+      shelf_life: "Reusable MCP artifact"
+  secondary:
+    - "ARCHITECTURE.md — reference-quality documentation with diagrams for every service, pipeline flow, and message-bus pattern"
+    - "threat-modeling-agent-framework.md — earlier design iteration (Agent SDK + MongoDB/Neo4j) published for transparency on architectural evolution"
+    - "Docker Compose topology with health-gated startup"
+    - "S3 artifact taxonomy: scan-results, mitre-mapped-findings, inventory, threat-model, executive-reports"
+
+technologies:
+  direct:
+    - "Python"
+    - "Docker & Docker Compose"
+    - "AWS S3"
+    - "FastMCP / Streamable HTTP"
+    - "Azure OpenAI (embeddings)"
+    - "Checkov"
+    - "Trivy (IaC, SCA, Secrets, Image)"
+    - "Bandit"
+    - "Semgrep"
+    - "Syft (SBOM / SPDX)"
+    - "MITRE ATT&CK framework"
+    - "STRIDE methodology"
+    - "CVSS scoring"
+  ecosystem:
+    - "Anthropic Claude API (earlier design iteration)"
+    - "Microsoft Agent SDK (earlier design iteration)"
+    - "MongoDB / Neo4j (considered as knowledge base in earlier design)"
+    - "MCP ecosystem / Model Context Protocol"
+  evaluated:
+    - "Microsoft Agent SDK vs. loose-coupled HTTP+MCP architecture"
+    - "MongoDB vs. Neo4j vs. S3-as-message-bus for inter-agent state"
+    - "Rule-based vs. embedding-based finding deduplication"
+  categories:
+    - "Multi-Agent AI Engineering"
+    - "Agentic Security Tooling"
+    - "Model Context Protocol (MCP)"
+    - "Security Architecture"
+    - "Threat Modeling Automation"
+    - "Application Security (SAST/SCA/IaC/Secrets/Container)"
+    - "Software Supply Chain / SBOM"
+    - "DevSecOps Platform Engineering"
+    - "Cloud Security"
+
+stakeholders:
+  presented_to:
+    - "Open-source community (via public GitHub repository)"
+    - "Technical interviewers / hiring managers (as portfolio artifact)"
+  collaborated_with:
+    - "Solo — no direct collaborators"
+  influenced:
+    - "MCP-for-security practitioners (reference examples of ATT&CK and Syft MCP servers)"
+    - "AppSec engineers exploring continuous / automated threat modeling patterns"
+
+leadership:
+  activities:
+    - "Sole architect, developer, and maintainer of a 4-service + 2-MCP-server open-source system"
+    - "Made and defended the architectural pivot from Agent-SDK-coupled design to HTTP+MCP+S3"
+    - "Published reference-grade architecture documentation"
+    - "Contributed practical examples to the emerging MCP-for-security pattern"
+  cross_functional: >
+    Demonstrated cross-discipline fluency by integrating applied-AI (multi-agent
+    orchestration, LLM-embedding dedup, MCP tool planes), security architecture
+    (STRIDE + MITRE + attack-chain + CVSS scoring), and DevSecOps (seven scanners,
+    Docker Compose topology, S3 message bus) in a single coherent system.
+  mentoring: "Documentation written as teaching artifact for the broader community"
+  strategic_influence: >
+    Built publicly to demonstrate that automated, architecture-aware threat
+    modeling is achievable with open tooling — a direction that challenges the
+    closed, commercial-CNAPP-centric status quo.
+
+impact:
+  quantitative:
+    - metric: "Scanners integrated in parallel"
+      value: "7"
+      context: "Checkov, Trivy-IaC, Bandit, Semgrep, Trivy-SCA, Trivy-Secrets, Trivy-Image"
+    - metric: "Cooperating services in pipeline"
+      value: "4 agents + 2 MCP servers"
+      context: "Orchestrator, Scanner, Inventory, Threat Model + MITRE-MCP + Syft-MCP"
+    - metric: "Raw findings per scan"
+      value: "~125"
+      context: "Collapsed to a materially smaller set via LLM-embedding deduplication"
+    - metric: "Threat modeling stages automated"
+      value: "4"
+      context: "Correlate → Generate attack scenarios → STRIDE → CVSS-style score & prioritize"
+  qualitative:
+    - "Converted threat modeling from a workshop artifact into a reproducible, on-demand pipeline"
+    - "Proved out MCP-for-security as a practical pattern via two working MCP servers"
+    - "Demonstrated LLM-embedding deduplication as a superior approach to rule-based dedup"
+    - "Delivered a portfolio-grade artifact demonstrating senior capability across three hiring axes simultaneously"
+  adoption: "Open-source project publicly available on GitHub; architectural patterns (HTTP+MCP+S3 message bus, MCP-for-security) generalize beyond this specific codebase"
+  longevity: "Actively maintained (2025–Present); modular architecture means individual components can be swapped or reused independently — designed to outlive any specific scanner, LLM provider, or embedding model"
+
+keywords:
+  technical:
+    - "Multi-Agent Systems"
+    - "Agentic AI"
+    - "LLM Engineering"
+    - "Model Context Protocol"
+    - "MCP"
+    - "FastMCP"
+    - "Streamable HTTP"
+    - "Microsoft Agent SDK"
+    - "Claude API"
+    - "Azure OpenAI"
+    - "Embeddings"
+    - "Cosine Similarity"
+    - "Semantic Deduplication"
+    - "Python"
+    - "Docker"
+    - "Docker Compose"
+    - "AWS S3"
+    - "HTTP Services"
+    - "Health-Gated Startup"
+    - "Checkov"
+    - "Trivy"
+    - "Bandit"
+    - "Semgrep"
+    - "Syft"
+    - "SBOM"
+    - "SPDX"
+    - "STRIDE"
+    - "MITRE ATT&CK"
+    - "CVSS"
+  domain:
+    - "Application Security"
+    - "AppSec"
+    - "Threat Modeling"
+    - "Automated Threat Modeling"
+    - "Attack Path Analysis"
+    - "Attack Chain Analysis"
+    - "Security Architecture"
+    - "DevSecOps"
+    - "Cloud Security"
+    - "Software Supply Chain"
+    - "Container Security"
+    - "IaC Security"
+    - "Secrets Scanning"
+    - "SAST"
+    - "SCA"
+    - "Data Flow Analysis"
+    - "Trust Boundary Analysis"
+    - "Asset Inventory"
+  methodologies:
+    - "Orchestrator Pattern"
+    - "Message-Bus Architecture"
+    - "MCP-for-Security"
+    - "Architecture-Aware Threat Modeling"
+    - "Four-Stage Threat Modeling Pipeline"
+    - "LLM-Native Deduplication"
+    - "Versioned Artifact Persistence"
+    - "Health-Gated Service Startup"
+    - "Open-Source Architectural Evolution"
+  soft_skills:
+    - "End-to-End Ownership"
+    - "Architectural Judgment"
+    - "Solo Delivery"
+    - "Technical Writing / Documentation"
+    - "Cross-Discipline Fluency"
+    - "Open-Source Maintainership"
+    - "Design Iteration & Communication"
+
+proudest_achievement:
+  headline: >
+    Designed and built — solo — a production-quality, multi-agent security
+    pipeline that automates end-to-end threat modeling by composing LLM-powered
+    agents, MCP-hosted knowledge bases, and seven industry-standard scanners
+    into one reproducible system.
+  story: >
+    In one project I demonstrated the ability to reason across three disciplines
+    that rarely intersect in one engineer: the applied-AI work of orchestrating
+    cooperating LLM agents over MCP and embedding-based deduplication; the
+    security-architecture work of translating scan findings into STRIDE + MITRE
+    + attack-chain analysis; and the DevSecOps / platform work of shipping it
+    as a containerized, health-gated, S3-backed pipeline with public documentation.
+  why_it_matters: >
+    Demonstrates capacity to independently own a complex, multi-discipline
+    engineering problem end-to-end — from architectural iteration (SDK-coupled
+    → HTTP+MCP+S3), through implementation across seven scanners and four
+    services, to public documentation. Direct evidence of senior-level technical
+    judgment, breadth, and follow-through in currently-hot areas: agentic AI
+    for security, MCP tooling, and automated threat modeling.

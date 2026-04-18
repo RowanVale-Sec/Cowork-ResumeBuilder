@@ -1,0 +1,29 @@
+{
+  "skill_name": "resume-enhancer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to apply for a CISO role. Here's a job description:\n\nChief Information Security Officer (CISO)\nWe're looking for an experienced security leader to own our entire security program. You'll report to the CTO and be responsible for:\n- Building and leading a security organization (20+ engineers)\n- Enterprise risk management and compliance (SOC2, ISO 27001, FedRAMP)\n- Application security, cloud security, and infrastructure security\n- Incident response and threat intelligence\n- Security strategy and roadmap aligned with business objectives\n- Board-level communication of security posture and risk\n\nRequirements: 12+ years in security, 5+ years in leadership, experience with cloud-native environments (AWS/GCP/Azure), strong track record of building security programs from the ground up.\n\nPlease take my resume and tailor it for this role. My resume is at: /sessions/user-session/mnt/Resume/Candidate -Engineering Manager - Security & AI_Extensive Version.docx",
+      "expected_output": "A polished .docx resume tailored to a CISO role, emphasizing leadership, program-building, and strategic security experience. Should preserve all real experience and dates.",
+      "files": ["/sessions/user-session/mnt/Resume/Candidate -Engineering Manager - Security & AI_Extensive Version.docx"]
+    },
+    {
+      "id": 2,
+      "prompt": "I need to update my resume for an AI/ML Security Engineering Manager position. Here's the job posting:\n\nEngineering Manager, AI/ML Security\nJoin our team building security for AI/ML systems. You will:\n- Lead a team of 8-12 security engineers focused on AI/ML pipeline security\n- Design and implement security controls for ML model training and inference\n- Develop threat models for LLM-based applications\n- Build automated security testing for ML pipelines\n- Partner with ML engineers to embed security into the ML lifecycle\n\nRequirements: 8+ years in security engineering, 3+ years managing teams, hands-on experience with Python, cloud platforms, and ML frameworks. Experience with LLM security, prompt injection, and model safety is a strong plus.\n\nMy resume: /sessions/user-session/mnt/Resume/Candidate -Engineering Manager - Security & AI_Extensive Version.docx\n\nAlso check my interview prep notes for additional context about my experience: /sessions/user-session/mnt/Resume/Interview/",
+      "expected_output": "A .docx resume tailored for AI/ML security management. Should pull relevant details from interview prep documents to enrich bullet points. Should emphasize AI/ML experience and team leadership.",
+      "files": ["/sessions/user-session/mnt/Resume/Candidate -Engineering Manager - Security & AI_Extensive Version.docx"]
+    },
+    {
+      "id": 3,
+      "prompt": "Can you make my resume look more professional and modern? I don't have a specific job in mind right now, just want it polished and ready. Resume is here: /sessions/user-session/mnt/Resume/Candidate -Engineering Manager - Security & AI_Concise.docx",
+      "expected_output": "A clean, modern .docx resume with improved formatting and language, but without specific job tailoring. Should ask the user about their target role type before proceeding.",
+      "files": ["/sessions/user-session/mnt/Resume/Candidate -Engineering Manager - Security & AI_Concise.docx"]
+    },
+    {
+      "id": 4,
+      "prompt": "I'm applying for a Director of Security Engineering role at a major tech company. Here's the JD:\n\nDirector, Security Engineering\n- Own the security engineering function across application security, cloud security, and detection & response\n- Build and scale a team of 25+ engineers across multiple sub-teams\n- Drive security architecture decisions for a large-scale SaaS platform\n- Establish metrics and reporting for security program effectiveness\n- Collaborate with engineering, product, and legal/compliance teams\n- Manage a $5M+ annual security tooling budget\n\nRequirements: 15+ years in security, 7+ years in senior leadership, proven track record of scaling security organizations, deep technical background with hands-on experience.\n\nMy resume is: /sessions/user-session/mnt/Resume/Candidate -Engineering Manager - Security & AI_Extensive Version.docx\n\nI also have some experience documents that go deeper into my achievements:\n- /sessions/user-session/mnt/Resume/Interview/Interview Prep/Career progression.txt\n- /sessions/user-session/mnt/Resume/Interview/Interview Prep/Cross Functional collaboration.txt\n- /sessions/user-session/mnt/Resume/Interview/ir-manager-interview-responses.md\n\nPlease use these to make my bullet points more impactful with real details from my experience.",
+      "expected_output": "A .docx resume tailored for Director-level role, heavily enriched with details from the experience documents. Should demonstrate the user's leadership scale, cross-functional impact, and program-building achievements using specific metrics and stories from the supplementary files.",
+      "files": ["/sessions/user-session/mnt/Resume/Candidate -Engineering Manager - Security & AI_Extensive Version.docx"]
+    }
+  ]
+}

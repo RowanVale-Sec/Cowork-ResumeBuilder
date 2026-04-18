@@ -1,0 +1,243 @@
+# =============================================================================
+# EXPERIENCE BLOCK: Project Grid — AI Security Framework
+# =============================================================================
+
+meta:
+  project_name: "Project Grid"
+  organization: "[Enterprise Client — Confidential]"
+  role: "Engineering Lead"
+  engagement_type: "consulting"
+  duration:
+    start: "2025-10"
+    end: "2026-03"
+    length_description: "< 6 months"
+  team:
+    size: "4-8 people"
+    your_role_in_team: "Engineering Lead — led cross-functional team of security engineers, AI engineers, and risk analysts"
+    direct_reports: 0
+
+context:
+  business_problem: "Enterprise client lacked a structured approach to identify, assess, and mitigate security risks across their rapidly expanding AI stack — including LLM APIs, self-hosted models, RAG pipelines, AI agents, and MCP integrations. No existing framework addressed the full breadth of AI deployment patterns or mapped risks to actionable security requirements."
+  why_it_mattered: "Without a unified security framework, the organization was deploying AI systems with ad-hoc security controls, creating inconsistent risk posture, potential data leakage, and vulnerability to adversarial attacks across production AI systems."
+  scope: "Enterprise-wide — framework consumed by Security, AI/ML Engineering, DevOps, Risk & Compliance, Product, and CISO office"
+  audience: "Single large enterprise client"
+  industry_domain: "Enterprise AI Security"
+
+approach:
+  nature_of_work: "greenfield"
+  methodology: "Research-driven framework development: mapped AI deployment patterns → identified applicable risks per pattern → defined deployment scenarios → derived security requirements per scenario → grouped into capability domains → assigned ownership → operationalized with measurement and continuous improvement"
+  frameworks_referenced:
+    - "OWASP Top 10 for LLMs"
+    - "OWASP Agentic AI Security"
+    - "MITRE ATLAS"
+  design_patterns:
+    - name: "Custom LLM (LLM + RAG)"
+      description: "Enterprise applications connecting LLMs with proprietary data via Retrieval-Augmented Generation pipelines"
+      risks_addressed:
+        - "OWASP LLM risks (prompt injection, data leakage, insecure output handling)"
+      deployment_scenarios:
+        - "Cloud-hosted RAG with managed LLM API"
+        - "Self-hosted model with internal knowledge base"
+    - name: "Traditional / General Purpose (Enterprise Copilot)"
+      description: "General-purpose AI assistants integrated into enterprise workflows (e.g., coding copilots, productivity assistants)"
+      risks_addressed:
+        - "OWASP LLM risks"
+        - "Data exfiltration through copilot context"
+      deployment_scenarios:
+        - "SaaS copilot with enterprise data access"
+        - "Self-hosted copilot with controlled data boundaries"
+    - name: "Single Agent"
+      description: "Autonomous AI agents with tool access executing tasks on behalf of users"
+      risks_addressed:
+        - "OWASP LLM risks"
+        - "OWASP Agentic AI risks"
+        - "Tool access control and privilege escalation"
+        - "MCP security"
+      deployment_scenarios:
+        - "Agent with read-only tool access"
+        - "Agent with read-write tool access and approval workflows"
+    - name: "Multi-Agent"
+      description: "Orchestrated systems of multiple AI agents collaborating, delegating, and communicating"
+      risks_addressed:
+        - "OWASP LLM risks"
+        - "OWASP Agentic AI risks"
+        - "Inter-agent trust and communication security"
+        - "Cascading failure and privilege propagation"
+      deployment_scenarios:
+        - "Supervisor-worker agent topology"
+        - "Peer-to-peer agent collaboration"
+        - "Agent-to-agent delegation chains"
+
+  key_decisions:
+    - "Treated agent frameworks as 'Operating Systems for LLMs' — applying OS-level security principles (access control, input/output validation, memory management, tool governance) to agent runtime environments"
+    - "Classified vendor security capabilities as 'direct' vs 'indirect' — direct capabilities address threats natively (e.g., scanning LLM input/output for prompt injection), while indirect capabilities require separate supply chain and posture management (e.g., vendor-hosted MCP servers require independent supply chain verification)"
+    - "Created sub-requirements based on implementation method — recognizing that the same security requirement has different control needs depending on whether it's addressed directly by a vendor tool or requires indirect organizational processes"
+    - "Grouped all security requirements into four capability domains: IAM (Identity & Access Management), Data Security, TDR (Threat Detection & Response), and SPM (Security Posture Management)"
+    - "For agentic patterns, added a fifth domain: Agent Framework Security — covering tool governance, LLM-to-tool I/O validation, memory management, and tool posture assessment"
+
+  innovations:
+    - "Novel 'AI Security Operating Model' treating agent frameworks as OS-level constructs requiring kernel-level security controls"
+    - "Direct vs Indirect vendor capability classification enabling precise procurement criteria"
+    - "Design-pattern-first risk assessment approach — risks are contextualized to how AI is actually deployed, not assessed generically"
+
+deliverables:
+  primary:
+    - name: "AI Security Framework & Technical Security Requirements"
+      description: "Comprehensive framework mapping 4 AI deployment patterns to applicable risks, deployment scenarios, and grouped security requirements (IAM, Data Security, TDR, SPM, Agent Framework Security). Living document designed for 1-year implementation roadmap."
+      consumers:
+        - "Security Engineering teams (implementation)"
+        - "AI/ML Engineering teams (integration)"
+        - "Risk & Compliance (audit and assessment)"
+        - "CISO (investment decisions and risk dashboard)"
+      shelf_life: "living document — designed for continuous improvement over 1+ year implementation"
+  secondary:
+    - name: "Vendor Capability Assessment Criteria"
+      description: "Evaluation framework for AI security vendors based on direct vs indirect capability classification"
+      consumers: ["Procurement", "Security Architecture"]
+      shelf_life: "quarterly refresh"
+    - name: "Internal Whitepapers & RFCs"
+      description: "Technical documents detailing design rationale, threat models per deployment pattern, and agent-as-OS security model"
+      consumers: ["Security Engineering", "AI/ML Engineering"]
+      shelf_life: "reference material"
+
+technologies:
+  direct: []
+  ecosystem:
+    - "LLM APIs (OpenAI, Anthropic, etc.)"
+    - "Self-hosted models (HuggingFace, vLLM)"
+    - "RAG pipelines"
+    - "AI Agents and agentic workflows"
+    - "MCP (Model Context Protocol)"
+    - "ML Ops / Model deployment infrastructure"
+    - "Agent frameworks (LangChain, CrewAI, AutoGen equivalents)"
+  evaluated:
+    - "AI security vendor tools (prompt injection detection, output monitoring, guardrails)"
+    - "MCP server hosting and management platforms"
+    - "Agent observability and governance tools"
+  categories:
+    - "IAM (Identity & Access Management)"
+    - "Data Security"
+    - "TDR (Threat Detection & Response)"
+    - "SPM (Security Posture Management)"
+    - "Agent Framework Security"
+
+stakeholders:
+  presented_to:
+    - "C-suite / CISO"
+    - "Security leadership"
+  collaborated_with:
+    - "Security Engineers"
+    - "AI/ML Engineers"
+    - "DevOps / Platform teams"
+    - "Risk & Compliance teams"
+    - "Product teams"
+  influenced:
+    - "Enterprise AI security strategy and investment decisions"
+    - "Vendor procurement and evaluation criteria"
+    - "Security team operating model for AI systems"
+    - "Risk assessment methodology for AI deployments"
+
+leadership:
+  activities:
+    - "Presented framework and roadmap to C-suite and CISO"
+    - "Published internal whitepapers and RFCs on AI security architecture"
+    - "Ran workshops and training sessions for security and engineering teams"
+    - "Evaluated and recommended AI security vendor tools"
+    - "Assigned requirement owners across Security and AI Engineering teams"
+    - "Mapped technical requirements to enterprise AI security framework (RMF/ISO aligned)"
+    - "Assigned process owners from Risk team for ongoing risk assessment"
+  cross_functional: "Coordinated across Security Engineering, AI/ML Engineering, DevOps, Risk & Compliance, Product, and CISO office to ensure framework adoption and ownership assignment"
+  mentoring: "Enabled security and engineering teams to independently assess and implement AI security requirements through workshops and documented playbooks"
+  strategic_influence: "Framework became the foundation for enterprise AI security investment decisions, vendor procurement strategy, and ongoing risk-based governance"
+
+impact:
+  quantitative:
+    - metric: "AI deployment patterns covered"
+      value: "4 (Custom LLM/RAG, Enterprise Copilot, Single Agent, Multi-Agent)"
+      context: "Comprehensive coverage of all enterprise AI deployment models"
+    - metric: "Security capability domains defined"
+      value: "5 (IAM, Data Security, TDR, SPM, Agent Framework Security)"
+      context: "Structured grouping enabling team-by-team implementation ownership"
+    - metric: "Implementation roadmap duration"
+      value: "1 year"
+      context: "Requirements designed for phased rollout with continuous improvement"
+    - metric: "Consuming teams"
+      value: "6+ teams across the enterprise"
+      context: "Security, AI/ML, DevOps, Risk, Product, CISO office"
+    - metric: "Frameworks synthesized"
+      value: "3 (OWASP LLM Top 10, OWASP Agentic AI, MITRE ATLAS)"
+      context: "Unified risk taxonomy from multiple industry standards"
+  qualitative:
+    - "Framework became living document for continuous security improvement"
+    - "Enabled data-driven vendor procurement decisions based on direct vs indirect capability assessment"
+    - "Provided CISO with risk-based investment dashboard for AI security"
+    - "Established repeatable methodology for assessing new AI deployment patterns as they emerge"
+    - "Bridged gap between security engineering implementation and risk/compliance audit needs"
+  adoption: "Adopted enterprise-wide as the primary AI security governance framework. Used by engineering teams for implementation, risk teams for assessment, and CISO for investment prioritization."
+  longevity: "Designed as living document with built-in continuous improvement process. Framework structure (design pattern → risk → deployment → requirement) is pattern-agnostic and extensible to future AI architectures."
+
+keywords:
+  technical:
+    - "AI security"
+    - "LLM security"
+    - "prompt injection"
+    - "jailbreak prevention"
+    - "data leakage prevention"
+    - "model supply chain security"
+    - "RAG pipeline security"
+    - "MCP security"
+    - "Model Context Protocol"
+    - "agentic AI security"
+    - "multi-agent security"
+    - "AI output monitoring"
+    - "guardrails"
+    - "adversarial threats"
+    - "self-hosted models"
+    - "LLM APIs"
+    - "agent frameworks"
+    - "tool governance"
+    - "I/O validation"
+    - "access control for AI"
+    - "AI authentication"
+    - "threat detection and response"
+    - "security posture management"
+    - "vLLM"
+    - "HuggingFace"
+    - "OpenAI"
+    - "Anthropic"
+  domain:
+    - "enterprise security"
+    - "AI risk management"
+    - "security framework"
+    - "security architecture"
+    - "threat modeling"
+    - "risk assessment"
+    - "security governance"
+    - "vendor evaluation"
+    - "security operations"
+    - "compliance"
+    - "audit"
+  methodologies:
+    - "OWASP Top 10 for LLMs"
+    - "OWASP Agentic AI"
+    - "MITRE ATLAS"
+    - "NIST AI RMF"
+    - "ISO 42001"
+    - "design pattern analysis"
+    - "deployment scenario modeling"
+    - "direct vs indirect capability assessment"
+  soft_skills:
+    - "cross-functional leadership"
+    - "stakeholder management"
+    - "executive presentation"
+    - "technical writing"
+    - "workshop facilitation"
+    - "strategic thinking"
+    - "systems thinking"
+    - "vendor management"
+    - "change management"
+
+proudest_achievement:
+  headline: "Designed a first-principles AI Security Operating Model that unified fragmented security efforts into a single, extensible framework adopted enterprise-wide"
+  story: "Saw the larger picture beyond individual AI security risks — recognized that the enterprise needed not just a list of controls but an operating model that could evolve with the rapidly changing AI landscape. Engaged the right stakeholders across security, engineering, risk, and executive leadership to build a living framework that serves as implementation guide, vendor evaluation criteria, risk assessment tool, and CISO investment dashboard simultaneously."
+  why_it_matters: "Demonstrates ability to operate at the intersection of deep technical understanding and strategic organizational thinking — translating complex, emerging AI threats into actionable, governed security programs that scale"

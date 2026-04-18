@@ -1,0 +1,159 @@
+# =============================================================================
+# EXPERIENCE BLOCK: Cloud COE Security Assessment
+# =============================================================================
+
+meta:
+  project_name: "Cloud COE Security Assessment"
+  organization: "[Manufacturing Company — Confidential]"
+  role: "Engineering Manager"
+  engagement_type: "full-time"
+  duration:
+    start: "2023-01"
+    end: "2023-12"
+    length_description: "12 months"
+  team:
+    size: "2-3 people"
+    your_role_in_team: "Engineering Manager — led assessment and recommendations"
+    direct_reports: 0
+
+context:
+  business_problem: "Manufacturing company deployed Cloud Center of Excellence (COE) to centralize cloud governance. COE team implemented security monitoring but took narrow approach — only investigating rule violations that aligned with industry standards/benchmarks, ignoring custom misconfigurations unrelated to standards. Organization accumulated undetected data protection gaps outside standard frameworks."
+  why_it_mattered: "Narrow audit approach created hidden risk in areas not covered by industry standards. Critical assets could be misconfigured and undetected if violation wasn't benchmark-aligned. Manufacturing operations required comprehensive data protection beyond checklist compliance."
+  scope: "Cloud COE security monitoring strategy and alert prioritization across 300K+ alerts"
+  audience: "Cloud COE team, Security leadership, CISO office"
+  industry_domain: "Manufacturing Cloud Security / Industrial Operations"
+
+approach:
+  nature_of_work: "assessment"
+  methodology: "Analyzed 300K+ alerts across 121 rule sets. Challenged COE team's filtering approach (standards-aligned misconfigs only). Recommended shift to data classification-driven control framework — tag critical data assets and enforce controls based on asset sensitivity rather than benchmark alignment. Demonstrated that many critical violations fell outside standard frameworks."
+  frameworks_referenced:
+    - "Industry Cloud Security Standards"
+    - "Data Classification frameworks"
+    - "Risk-based control prioritization"
+  design_patterns:
+    - name: "Data Classification-Driven Controls"
+      description: "Control prioritization based on asset sensitivity (data tagging) rather than benchmark alignment"
+      risks_addressed:
+        - "Undetected misconfigurations outside standard frameworks"
+        - "Data protection gaps on critical assets"
+      deployment_scenarios:
+        - "Cloud environments with sensitive manufacturing/operational data"
+        - "Multi-tier asset classification with varying control requirements"
+
+  key_decisions:
+    - "Shifted assessment focus from 'does this violate a standard benchmark' to 'what is the sensitivity of data at risk'"
+    - "Recommended data tagging and classification as foundation for control prioritization"
+    - "Identified that COE team's standards-only approach created blind spots for organization-specific risks"
+    - "Proposed risk-based alert prioritization replacing checklist-based approach"
+
+  innovations:
+    - "Data classification-driven control framework addressing organization-specific risks beyond industry standards"
+    - "Risk-based alert prioritization from 300K alerts to actionable focus areas"
+
+deliverables:
+  primary:
+    - name: "Cloud COE Security Assessment Report"
+      description: "Analysis of 300K+ alerts, evaluation of COE team's filtering approach, recommended data classification-driven control framework"
+      consumers:
+        - "Cloud COE team (strategy)"
+        - "CISO and Security leadership (oversight)"
+      shelf_life: "strategic assessment — annual review recommended"
+    - name: "Data Classification & Control Framework"
+      description: "Recommended approach to tag critical assets and prioritize controls based on data sensitivity"
+      consumers: ["Cloud COE", "Security teams"]
+      shelf_life: "living document — updated as asset inventory changes"
+    - name: "Alert Prioritization & Filtering Strategy"
+      description: "Recommended changes to COE team's alert analysis approach based on risk and data sensitivity"
+      consumers: ["Cloud COE team"]
+      shelf_life: "operational guidance"
+  secondary:
+    - name: "Risk-Based Control Recommendations"
+      description: "Specific controls recommended based on data classification analysis"
+      consumers: ["Cloud COE", "Security Engineering"]
+      shelf_life: "reference material"
+
+technologies:
+  direct: []
+  ecosystem:
+    - "Cloud security monitoring tools"
+    - "Cloud security posture management (CSPM) platforms"
+    - "Data classification tools"
+  evaluated:
+    - "COE security monitoring approach and tool selection"
+  categories:
+    - "Cloud Security"
+    - "Governance and Risk"
+    - "Data Protection"
+
+stakeholders:
+  presented_to:
+    - "CISO"
+    - "Cloud COE leadership"
+    - "VP Security"
+  collaborated_with:
+    - "Cloud COE team"
+    - "Security teams"
+    - "Data governance teams"
+  influenced:
+    - "Cloud security monitoring strategy"
+    - "Control prioritization approach"
+    - "Risk assessment methodology"
+
+leadership:
+  activities:
+    - "Analyzed 300K+ alerts to understand COE team's approach and limitations"
+    - "Challenged standards-only filtering methodology and presented risk-based alternative"
+    - "Recommended data classification framework for asset-sensitive control prioritization"
+    - "Presented assessment and recommendations to CISO and Cloud leadership"
+  cross_functional: "Coordinated with Cloud COE team, Security, and Data governance teams"
+  mentoring: "Provided guidance to COE team on risk-based approach vs standards-only filtering"
+  strategic_influence: "Assessment influenced Cloud COE team's security monitoring strategy and alert prioritization approach"
+
+impact:
+  quantitative:
+    - metric: "Alerts analyzed"
+      value: "300K+ across 121 rule sets"
+      context: "Comprehensive analysis of COE monitoring activity"
+    - metric: "Rule sets evaluated"
+      value: "121"
+      context: "Broad coverage of cloud security monitoring rules"
+    - metric: "Framework shift"
+      value: "From standards-aligned to data classification-driven"
+      context: "New approach addressing organization-specific risks"
+  qualitative:
+    - "Identified gaps in COE team's narrow standards-only filtering approach"
+    - "Recommended data classification framework addressing organization-specific risk"
+    - "Demonstrated undetected misconfigurations outside benchmark frameworks"
+    - "Provided risk-based methodology for alert prioritization"
+  adoption: "Assessment findings influenced Cloud COE team's evolving security strategy. Data classification approach recommended for implementation."
+  longevity: "Data classification-driven framework provides sustainable, scalable approach to control prioritization as cloud portfolio grows"
+
+keywords:
+  technical:
+    - "cloud security"
+    - "security monitoring"
+    - "CSPM"
+    - "alert prioritization"
+    - "data classification"
+    - "cloud governance"
+  domain:
+    - "cloud security"
+    - "governance"
+    - "risk assessment"
+    - "data protection"
+    - "manufacturing security"
+  methodologies:
+    - "data classification"
+    - "risk-based control prioritization"
+    - "threat assessment"
+  soft_skills:
+    - "assessment and analysis"
+    - "strategic thinking"
+    - "stakeholder communication"
+    - "challenge existing approaches"
+
+proudest_achievement:
+  headline: "Identified flaw in Cloud COE team's standards-only monitoring approach by analyzing 300K alerts, and recommended data classification-driven framework addressing organization-specific risks"
+  story: "Analyzed the COE team's monitoring of 300K alerts across 121 rule sets and discovered their approach missed critical vulnerabilities — they only investigated violations aligned with industry standards, ignoring organization-specific misconfigurations. Challenged this methodology and recommended a data classification-driven framework where critical assets are tagged and controls are prioritized based on asset sensitivity rather than benchmark alignment."
+  why_it_matters: "Demonstrates ability to see gaps in existing governance approaches and recommend strategic alternatives. Shows that best practices matter less than understanding organization-specific risk. Ability to challenge conventional thinking while maintaining stakeholder relationships."
+
