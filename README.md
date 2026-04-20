@@ -1,5 +1,7 @@
 # AI-Powered Resume Builder: Cowork Guide
 
+**Full Blog article available here :** https://rowanvale-sec.github.io/articles/Cowork-Resume-Builder.html
+
 > **What you'll build:** A two-skill system that captures project experience as structured data, then generates tailored resumes for any job description.
 >
 > **Who this is for:** Claude Pro/Max users who want a compounding career asset — not a one-off resume.
